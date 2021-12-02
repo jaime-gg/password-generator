@@ -31,7 +31,7 @@ function promptLength () {
     alert("Password length has to be a number between 8-128 characters");
     promptLength();
   } else{
-  alert("The following alerts will ask you which characters you would like to include in your password.");
+  alert("The following alerts will confirm which characters you would like to include in your password.");
   }
   return passwordLength;
 }
@@ -72,31 +72,32 @@ function generatePassword() {
   promptSymbol();
   console.log(chooseSymbol);
 
-  if (chooseLowercase && chooseUppercase && chooseSymbol) {
 
-  }
-  else if (chooseLowercase && chooseUppercase) {
-
-  }
-  else if (chooseLowercase && chooseSymbol) {
-
-  }
-  else if (chooseUppercase && chooseSymbol) {
-
-  }
-  else if (chooseLowercase) {
-
-  }
-  else if (chooseUppercase) {
-
-  }
-  else if (chooseSymbol) {
-
-  }
-  else {
-    alert('You must choose one type of character for your password');
+  var chosenCharacters = "";  
+  // if no charecter types were approved warn user and make them restart.  
+  if (!chooseLowercase && !chooseUppercase && !chooseNumber && !chooseSymbol) {
+    alert("You must choose at least one type of character for your password!");
     generatePassword ();
   }
+  // ask which way to best 
+  if (chooseLowercase){
+    chosenCharacters += lowercase;
+  }
+  if (chooseUppercase){
+    chosenCharacters += uppercase;
+  }
+  if (chooseNumber){
+    chosenCharacters += numbers;
+  }
+  if (chooseSymbol){
+    chosenCharacters += specialCharecters;
+  }
+
+  var password = "";
+  for (var i = 0; i < passwordLength; i++) {
+    password += chosenCharacters.charAt(Math.floor(Math.random() * chosenCharacters.length));
+  }
+  return password;
 
 }
 
