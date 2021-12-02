@@ -4,7 +4,7 @@ Create an application that generates a random password based on user-selected cr
 
 If you are unfamiliar with special characters, take a look at some [examples of special characters on the OWASP Foundation website](https://www.owasp.org/index.php/Password_special_characters).
 
-## User Story
+## Given: User Story
 
 ```
 AS AN employee with access to sensitive data
@@ -12,7 +12,7 @@ I WANT to randomly generate a password that meets certain criteria
 SO THAT I can create a strong password that provides greater security
 ```
 
-## Acceptance Criteria
+## Given: Acceptance Criteria
 
 ```
 GIVEN I need a new, secure password
@@ -36,7 +36,7 @@ The following image demonstrates the application functionality:
 
 ![An app window with the label Password Generator, an input field labeled Your Secure Password, and a Generate Password button.](./Assets/03-javascript-homework-demo.png)
 
-## Review
+## My Work and Review
 
 You are required to submit the following for review:
 
