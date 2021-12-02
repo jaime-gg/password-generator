@@ -2,12 +2,12 @@
 var generateBtn = document.querySelector("#generate");
 
 // to do: 
-  // 1. promt the user 
-  //    1.1. leangth 8 - 128
-  //    1.2. lowercase, uppercase, numbers, special charecters
+  // 1. promt the user     - done
+  //    1.1. leangth 8 - 128      - done
+  //    1.2. lowercase, uppercase, numbers, special charecters  -done
   //      1.2.a Establish what is accepted examples of each
-  // 2. validate the input 
-  // 3. generate and display working password
+  // 2. validate the input     
+  // 3. generate and display working password   - done
 
 // the source for the password generator 
 var lowercase = "abcdefghijklmnopqrstuvwxyz";
@@ -59,7 +59,7 @@ function promptSymbol () {
 
 
 function generatePassword() {
-  // console.log ('clicked')  // checing button worked 
+  // console.log ('clicked')  // checking button worked 
   // call my prompts & validate inpute (?)
   promptLength();
   console.log(passwordLength);
@@ -93,7 +93,10 @@ function generatePassword() {
     chosenCharacters += specialCharecters;
   }
 
+  // enetered empty value so only the generated password will be returned
   var password = "";
+
+  // used charAt method to choose random value for individual characters of the generated password
   for (var i = 0; i < passwordLength; i++) {
     password += chosenCharacters.charAt(Math.floor(Math.random() * chosenCharacters.length));
   }
