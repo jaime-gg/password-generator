@@ -14,28 +14,47 @@ var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "0123456789";
 var specialCharecters = "!@#$%^&*()_-+={}[];:'`~<,>.?/|";
 
+var passwordLength;
+var chooseLowercase;
+var chooseUppercase;
+var chooseSymbol; 
+
 
 function promptLength () {
-
+  prompt("What is your desired password length? Please choose a number between 8-128 characters.")
+  if (passwordLength<8){
+    alert("Password length has to be a number between 8-128 characters");
+    promptLength();
+  } else if (passwordLength > 128){
+    alert("Password length has to be a number between 8-128 characters");
+    promptLength();
+  } else{
+  alert("The following alerts will ask you which characters you would like to include in your password.");
+  }
+  return passwordLength;
 }
 
 function promptLowercase () {
-
+  chooseLowercase = confirm ("Would you like to include lowercase?");
 }
 
 function promptUppercase() {
-
+  chooseUppercase = confirm ("Would you like to include lowercase?")
 }
 
 function promptSymbol () {
-
+  chooseSymbol= confirm ("Would you like to include symbols?")
 }
 
 
 
 function generatePassword() {
-// console.log ('clicked')  // checing button worked 
-
+  // console.log ('clicked')  // checing button worked 
+  // call my prompts
+  promptLength();
+  promptLowercase();
+  promptUppercase()
+  promptSymbol();
 }
 
 
